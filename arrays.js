@@ -42,7 +42,7 @@ function checkNumbers(array) {
 // Write a function that calculates the sum of all numbers in an array
 
 function getSum(array) {
-  let sum = array.reduce((prev, current) => prev + current);
+  let sum = array.reduce((prev, current) => prev + current, 0);
   return sum;
 }
 
@@ -61,8 +61,8 @@ function toString(array) {
 // Write a program that checks if an array of countries consist of a specified country
 const countries = ["Nigeria", "China", "Japan", "Ghana"];
 
-function checkCountry(array) {
-  return array.includes("Niger");
+function checkCountry(array, country) {
+  return array.includes(country);
 }
 
 // Write a function that prints each item in an array
@@ -78,11 +78,13 @@ function checkEvenNum(array) {
 }
 
 // Create a program that converts celcius to fahrenheit and vice versa
-function convertTemperature(num, param) {
-  if (param.toUpperCase() == "F") {
+function convertTemperature(num, unit) {
+  if (unit.toUpperCase() == "F") {
     const celcius = ((num - 32) * 5) / 9;
     return `${num} Fahrenheit is equivalent to ${celcius} Celcius `;
-  } else if (param.toUpperCase() == "C") {
+  }
+
+  if (unit.toUpperCase() == "C") {
     const fahrenheit = (num * 9) / 5 + 32;
     return `${num} Celcius is equivalent to ${fahrenheit} Fahrenheit`;
   }
